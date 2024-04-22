@@ -24,10 +24,12 @@ namespace Hundhotellet
                 Dog dog = dogArray[i];
                 if(dog != null)
                 {
-                    Console.WriteLine("Bur "+ i + ": " + dog.name);
-                }
-                
+                    Console.WriteLine("Bur " + i + ": " + dog.name + " Ägare: " + dog.owner.firstName + " " + dog.owner.lastName
+                        + " Adress: " + dog.owner.address.gatuAdress + " " + dog.owner.address.stad + " " + dog.owner.address.postnummer);
+                }              
             }
+
+            
         }
     }
 }
