@@ -48,5 +48,28 @@ namespace Hundhotellet
                 }
             }
         }
+
+        public void PrintPickups()
+        {
+            for (int i = 0; i < dogArray.Length; i++)
+            {
+                Dog dog = dogArray[i];
+
+                if (dog != null)
+                {
+                    Console.WriteLine("Bur " + i + ": " + dogArray[i].name);
+
+                    if (dogArray[i].visit.dropoffTime.Hour < DateTime.Now.Hour)
+                    {
+                        Console.WriteLine("Kom hit: kl " + dogArray[i].visit.dropoffTime.Hour);
+                    }
+                    if (dogArray[i].visit.pickupTime.Hour > DateTime.Now.Hour)
+                    {
+                        Console.WriteLine("Blir hämtad: kl " + dogArray[i].visit.pickupTime.Hour);
+                    }
+                }
+            }
+        }
+
     }
 }
