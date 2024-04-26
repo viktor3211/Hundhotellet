@@ -8,6 +8,8 @@ namespace Hundhotellet
 {
     internal class DogHotel
     {
+        double costPerNight = 300;
+
         public Dog[] dogArray = new Dog[10];
         public void SetDog(int cageNumber, Dog dog)
         {
@@ -67,6 +69,26 @@ namespace Hundhotellet
                     {
                         Console.WriteLine("Blir hämtad: kl " + dogArray[i].visit.pickupTime.Hour);
                     }
+                }
+            }
+        }
+        public void PrintInvoice()
+        {
+            for (int i = 0; i < dogArray.Length; i++)
+            {
+                Dog dog = dogArray[i];
+
+                if (dog != null)
+                {
+                    Console.WriteLine("Bur " + i + ": " + dog.name + " Ägare: "
+                    + dog.owner.firstName + " " + dog.owner.lastName
+                    + " Adress: " + dog.owner.address.gatuAdress + " " + dog.owner.address.stad
+                    + " " + dog.owner.address.postnummer + " Kom hit: kl " + dogArray[i].visit.dropoffTime.Hour +
+                    " Blir hämtad: kl " + dogArray[i].visit.pickupTime.Hour + " Faktura: " + costPerNight);
+                }
+                if(dog == null)
+                {
+                    Console.WriteLine("Felmeddelande: Finns ingen hund i buren");
                 }
             }
         }
